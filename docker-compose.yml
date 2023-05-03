@@ -1,0 +1,21 @@
+version: '3.6'
+
+services:
+  app:
+    image: ghcr.io/fdarveau/flame:latest
+    container_name: flame
+    volumes:
+      - /zp_hdd/docker/flame:/app/data
+      - /var/run/docker.sock:/var/run/docker.sock # optional but required for Docker integration
+    ports:
+      - 82:5005
+    secrets:
+      - password
+    environment:
+      - PASSWORD_FILE=/run/secrets/password
+
+    restart: unless-stopped
+
+secrets:
+  password:
+    file: .flame_password.secret
