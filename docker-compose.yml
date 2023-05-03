@@ -18,4 +18,4 @@ services:
 
 secrets:
   password:
-    file: .flame_password.secret
+    file: ./flame_password.secret
