@@ -1,0 +1,5 @@
+.DS_Store
+*.secret
+*.sqlite
+bk/
+db_backups/
